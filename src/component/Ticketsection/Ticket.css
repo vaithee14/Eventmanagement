@@ -1,0 +1,101 @@
+.get-tickets-section{
+    background: url("../../assets/ticket-section-backgorund-image.jpg");
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 45px;
+    /* margin-bottom: 144px; */
+  
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .content-containers{
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .tickets-heading{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; 
+    position: relative;
+    color: #ee567e;
+
+  }
+  
+  .tickets-heading::after{
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: white;
+    margin: 10px 0 0;
+  }
+  
+  .tickets-description{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: center; 
+    color: #f9f9f9;
+  }
+  
+  .buy-now-btn{
+    background:#ee567e;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .buy-now-btn:hover {
+    background: white;
+    color: #ee567e;
+  }
+  
+  @media (max-width: 768px) {
+    .tickets-heading {
+      font-size: 2.5rem;
+    }
+  
+    .tickets-description {
+      font-size: 1rem;
+    }
+  
+    .buy-now-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tickets-heading {
+      font-size: 2rem;
+    }
+  
+    .tickets-description {
+      font-size: 0.9rem;
+    }
+    .buy-now-btn {
+      padding: 8px 16px;
+      font-size: 0.8rem;
+    }
+  }
