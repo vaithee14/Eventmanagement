@@ -2,25 +2,26 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
-
 export default function Dancingbtn() {
-  const [DanceEvent, setDanceEvent] = useState([]);
-  const SectionNav = useNavigate();
+  const [danceEvent, setDanceEvent] = useState([]);
+  const [danceId, setDanceId] = useState("");
+  console.log(danceId);
+
+  const SectionNavigate = useNavigate();
 
   // get
   useEffect(() => {
-    const FetchDanceMusic = async () => {
+    const FetchDanceEvents = async () => {
       try {
-        const danceEvents = await axios.get(
+        const response = await axios.get(
           "http://localhost:4050/api/dance/getDance"
         );
-        setDanceEvent(danceEvents.data);
+        setDanceEvent(response.data);
       } catch (Error) {
         console.error(Error);
       }
     };
-    FetchDanceMusic();
+    FetchDanceEvents();
   }, []);
 
   // post
@@ -38,9 +39,11 @@ export default function Dancingbtn() {
   };
 
   //   navigate ticket section
-  const moveTicketSections = () => {
-    SectionNav("../tickectsection");
-  };
+  useEffect(() => {
+    if (danceId) {
+      SectionNavigate(`danceticketsection/${danceId}`);
+    }
+  }, [danceId]);
 
   return (
     <>
@@ -50,7 +53,7 @@ export default function Dancingbtn() {
         </h1>
 
         <div className="flex flex-col items-center gap-6 mt-6">
-          {DanceEvent.map((events) => (
+          {danceEvent.map((events) => (
             <div
               key={events._id}
               className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg w-[90%] md:w-[80%] p-6"
@@ -79,7 +82,9 @@ export default function Dancingbtn() {
                 </p>
                 <button
                   className="mt-4 bg-[#ee526f] hover:bg-[#d9432a] text-white font-bold py-2 px-4 rounded-md w-full md:w-auto transition duration-300"
-                  onClick={moveTicketSections}
+                  onClick={() =>
+                    SectionNavigate(`/danceticketsection/${events._id}`)
+                  }
                 >
                   Book Ticket
                 </button>

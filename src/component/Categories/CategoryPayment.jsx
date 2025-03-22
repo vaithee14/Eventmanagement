@@ -23,7 +23,7 @@ export default function CategoryPaymentMethod() {
 
   // -
   const handleDecrement = () => {
-    ref.current = ref.current - 1;
+    ref.current = ref.current = 0;
     setcounter(ref.current);
     console.log("working");
   };

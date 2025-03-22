@@ -20,7 +20,7 @@ export default function TicketsBooking() {
         );
         setmusicEvent(musicEvents.data);
       } catch (Error) {
-        console.error(Error);
+        console.log(Error);
       }
     };
     FetchMusicEventsById();
@@ -29,7 +29,6 @@ export default function TicketsBooking() {
   const buynow = () => {
     navigate("/paymentmethods");
   };
-  
 
   return (
     <section className="w-full min-h-screen p-6 flex flex-col items-center bg-gray-100">

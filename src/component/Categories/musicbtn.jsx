@@ -88,7 +88,6 @@ export default function Musicbtn() {
                 className="mt-4 bg-[#ee526f] hover:bg-[#d9432a] text-white font-bold py-2 px-4 rounded-md w-full md:w-auto transition duration-300"
                 onClick={() => {
                   setMusicId(events._id);
-                  // moveTicketSection();
                 }}
               >
                 Book Ticket

@@ -7,6 +7,8 @@ export default function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+ 
+  
 
   return (
     <section className="background-img">
@@ -26,6 +28,7 @@ export default function Navbar() {
           <li>
             <a href="#about">About</a>
           </li>
+
           <li>
             <a href="#services">Services</a>
           </li>
