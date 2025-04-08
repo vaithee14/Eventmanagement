@@ -7,8 +7,6 @@ export default function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
- 
-  
 
   return (
     <section className="background-img">
@@ -44,6 +42,7 @@ export default function Navbar() {
           <p className="event-description">WELCOME TO MY EVENT PAGE</p>
         </div>
       </article>
+     
     </section>
   );
 }

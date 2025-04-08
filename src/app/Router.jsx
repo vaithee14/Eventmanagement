@@ -5,6 +5,8 @@ import Ticketsbooking from "../component/Categories/Categoryticket";
 import Categorypaymentmethod from "../component/Categories/CategoryPayment";
 import Dancingbtn from "../component/Categories/Dancingbtn";
 import DanceTicketSection from "../component/Categories/DanceTicketSection";
+import BirthdayTicketSection from "../component/Categories/BirthdayTicketSection";
+import Birthdaybtn from "../component/Categories/Bithday";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,10 @@ const router = createBrowserRouter([
     path: "/danceticketsection/:danceId",
     element: <DanceTicketSection />,
   },
-
+{
+  path:"/birthdaysection/:birthdayId",
+  element:<BirthdayTicketSection/>
+},
   {
     path: "/paymentmethods",
     element: <Categorypaymentmethod />,
@@ -35,7 +40,10 @@ const router = createBrowserRouter([
     path: "/category/dancing",
     element: <Dancingbtn />,
   },
-
+  {
+    path: "/category/birthday",
+    element: <Birthdaybtn />,
+  },
 ]);
 
 export default router;

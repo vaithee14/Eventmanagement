@@ -38,12 +38,13 @@ export const loginRegistration = createAsyncThunk(
       );
       return response.data.message;
     } catch (error) {
-      return rejectWithValue(error.response?.data?.message || "Login failed");
+      return rejectWithValue(
+        "Login validation failed: email or Password is required." ||
+          error.response?.data?.message
+      );
     }
   }
 );
-
-
 
 const upcomingEventsSlice = createSlice({
   name: "upcoming",

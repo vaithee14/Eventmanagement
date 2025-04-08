@@ -36,14 +36,6 @@ export default function Musicbtn() {
     }
   };
 
-  // const moveTicketSection = () => {
-  //   if (!musicId) {
-  //     console.error("Music ID is missing! Cannot navigate.");
-  //     return;
-  //   }
-  //   SectionNavigate(`/ticketsection/${musicId}`);
-  // };
-
   useEffect(() => {
     if (musicId) {
       SectionNavigate(`/ticketsection/${musicId}`);
