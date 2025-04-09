@@ -2,7 +2,7 @@ import "./Partners.css";
 
 export default function Sponsors() {
   return (
-    <section className="partners-section">
+    <section className="partners-section" >
       <div className="container">
         <h2>Our Partners</h2>
         <div className="partners-logos">

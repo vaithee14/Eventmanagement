@@ -42,8 +42,15 @@ export default function Categories() {
   };
 
   return (
-    <section className="main">
+    <section className="main" id="categories">
       <article className="background-color">
+        <div className="events-intro">
+          <h3>Our EVENTS</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+        </div>
         <div className="categories">
           <h2 className="categories-heading">CATEGORIES</h2>
           <hr className="heading-line" />

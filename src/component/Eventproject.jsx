@@ -11,8 +11,8 @@ export default function Eventprojects() {
     <>
       <Navbar />
       <Categories />
-      <Timer />
       <UpcoimgEvents />
+      <Timer />
       <Sponsers />
       <TicketSection />
       <FooterSection />

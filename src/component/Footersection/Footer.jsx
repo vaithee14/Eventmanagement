@@ -28,7 +28,7 @@ export default function FooterSection() {
   };
 
   return (
-    <section className="footer">
+    <section className="footer" >
       <div className="footer-left">
         <h1 className="footer-logo">CRAZY EVENTS</h1>
         <p className="footer-description">
@@ -53,6 +53,7 @@ export default function FooterSection() {
         <h2 className="footer-heading">Subscribe</h2>
         <form className="newsletter-form">
           <input type="email" placeholder="E-Mail here" />
+
           <button type="submit">Subscribe</button>
         </form>
       </div>

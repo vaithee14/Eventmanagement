@@ -10,15 +10,15 @@ export default function CategoryPaymentMethod() {
   });
 
   const [errors, setErrors] = useState({});
+  const [serverMessage, setServerMessage] = useState("");
   const [ticketCount, setTicketCount] = useState(1);
   const ticketPrice = 50;
   const totalPrice = ticketCount * ticketPrice;
 
   const handleChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
-
-    // Remove error on input change
     setErrors({ ...errors, [e.target.name]: "" });
+    setServerMessage("");
   };
 
   const validateInputs = () => {
@@ -27,14 +27,11 @@ export default function CategoryPaymentMethod() {
     if (!inputs.mobile.trim()) newErrors.mobile = "Mobile number is required.";
     if (!inputs.email.trim()) newErrors.email = "Email is required.";
     if (!inputs.password.trim()) newErrors.password = "Password is required.";
-
     return newErrors;
   };
 
-  // Registration Function
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const validationErrors = validateInputs();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -42,16 +39,20 @@ export default function CategoryPaymentMethod() {
     }
 
     try {
-      await axios.post("http://localhost:4050/payment/add/register", inputs);
-      alert("Registration Successful! Check your email.");
+      const res = await axios.post("http://localhost:4050/payment/add/register", inputs);
+      setServerMessage(res.data.message || "Registration successful!");
       setInputs({ username: "", mobile: "", email: "", password: "" });
       setErrors({});
     } catch (error) {
-      console.error("Error:", error.response?.data?.message);
+      const errorMsg = error.response?.data?.message;
+      if (errorMsg === "You are already registered. Please login instead.") {
+        setServerMessage(errorMsg);
+      } else {
+        setServerMessage("Registration failed. Try again.");
+      }
     }
   };
 
-  // Login Function
   const handleLogin = async () => {
     const loginErrors = {};
     if (!inputs.email.trim()) loginErrors.email = "Email is required for login.";
@@ -63,14 +64,25 @@ export default function CategoryPaymentMethod() {
     }
 
     try {
-      await axios.post("http://localhost:4050/payment/login", {
+      const res = await axios.post("http://localhost:4050/payment/login", {
         email: inputs.email,
         password: inputs.password,
       });
-      alert("Login Successful! Check your email.");
+
+      setServerMessage(res.data.message || "Login successful!");
+      
       setErrors({});
     } catch (error) {
-      console.error("Error:", error.response?.data?.message);
+      const errorMsg = error.response?.data?.message;
+      
+      if (errorMsg === "User not found") {
+        setErrors((prev) => ({ ...prev, email: "No account found with this email." }));
+        
+      } else if (errorMsg === "Invalid credentials") {
+        setErrors((prev) => ({ ...prev, password: "Incorrect password." }));
+      } else {
+        setServerMessage("Login failed. Try again later.");
+      }
     }
   };
 
@@ -80,6 +92,12 @@ export default function CategoryPaymentMethod() {
         <h2 className="text-3xl font-bold text-[#ee5672] text-center mb-6">
           Event Payment & Registration
         </h2>
+
+        {serverMessage && (
+          <div className="text-center text-red-600 font-medium mb-4">
+            {serverMessage}
+          </div>
+        )}
 
         {/* Registration Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -103,12 +121,14 @@ export default function CategoryPaymentMethod() {
               )}
             </div>
           ))}
+
           <button
             type="submit"
             className="w-full bg-[#ee5672] text-white py-3 rounded-lg font-semibold hover:bg-black transition"
           >
             Register & Pay
           </button>
+
           <button
             type="button"
             onClick={handleLogin}

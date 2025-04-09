@@ -1,6 +1,7 @@
 import "./Timer.css";
 
 export default function Timer() {
+  
   return (
     <section className="background-image">
       <h2 className="title">Counter until the big event</h2>

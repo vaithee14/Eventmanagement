@@ -3,7 +3,7 @@ import "./Ticket.css";
 export default function TicketSection() {
   return (
     <>
-      <section className="get-tickets-section">
+      <section className="get-tickets-section" id="about">
         <div className="overlay">
           <div className="content-containers">
             <h1 className="tickets-heading">ABOUT MY EVENT PROJECTS</h1>
