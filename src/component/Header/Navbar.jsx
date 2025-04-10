@@ -4,43 +4,47 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const NavigateCategory = useNavigate();
+  const navigate = useNavigate();
 
-  const Categories = () => {
-    NavigateCategory("/");
+  const handleNavigate = (path) => {
+    navigate(path);
+    setMenuOpen(false);
   };
-  const about = () => {
-    NavigateCategory("/");
-  };
+
   return (
-    <section className="background-img">
+    <section className="background-img" id="home">
       <nav className="navbar">
         <div className="logo">PLANER EVENTS</div>
 
-        <div className="hamburger-menu" onClick={toggleMenu}>
+        <div className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
           <i className="fa fa-bars"></i>
         </div>
 
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#service">Service</a>
-          </li>
-          <li>
-            <a href="#about" onClick={about}>
-              About
+            <a href="#home" onClick={() => handleNavigate("/")}>
+              Home
             </a>
           </li>
           <li>
-            <a href="#categories" onClick={Categories}>
+            <a href="#service" onClick={() => handleNavigate("/")}>
+              Service
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={() => handleNavigate("/")}>
+              About us
+            </a>
+          </li>
+          <li>
+            <a href="#categories" onClick={() => handleNavigate("/")}>
               Categories
             </a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#enquiry" onClick={() => handleNavigate("/enquiry")}>
+              Enquiry
+            </a>
           </li>
         </ul>
       </nav>
@@ -54,6 +58,12 @@ export default function Navbar() {
             tellus. Quisque velit nisi, pretium ut lacinia in, elementum id
             enim.
           </p>
+          <button
+            className="cta-button"
+            onClick={() => handleNavigate("/enquiry")}
+          >
+            Book Your Event
+          </button>
         </div>
       </article>
     </section>

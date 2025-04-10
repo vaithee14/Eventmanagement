@@ -45,7 +45,7 @@ export default function Categories() {
     <section className="main" id="categories">
       <article className="background-color">
         <div className="events-intro">
-          <h3>Our EVENTS</h3>
+          <h3>OUR EVENTS</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.

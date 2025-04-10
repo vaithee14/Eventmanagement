@@ -1,7 +1,7 @@
 .coming-event-head {
   font-size: 2rem;
   font-weight: bold;
-  color: white;
+  color: #ee576e;
   text-transform: uppercase;
   text-align: center;
   position: relative;
@@ -12,18 +12,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e74c62;
-  padding: 20px;
+  background-color: black;
   width: 100%;
 }
+
 
 .event-main-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color: #f9f9f9;
   align-items: center;
   padding: 134px 2rem 2rem;
+  background-image:url("../../assets/ticket-section-backgorund-image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 

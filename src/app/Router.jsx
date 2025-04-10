@@ -7,6 +7,7 @@ import Dancingbtn from "../component/Categories/Dancingbtn";
 import DanceTicketSection from "../component/Categories/DanceTicketSection";
 import BirthdayTicketSection from "../component/Categories/BirthdayTicketSection";
 import Birthdaybtn from "../component/Categories/Bithday";
+import Enquiry from "../component/Enquiry/Enquiry";
 
 const router = createBrowserRouter([
   {
@@ -27,10 +28,10 @@ const router = createBrowserRouter([
     path: "/danceticketsection/:danceId",
     element: <DanceTicketSection />,
   },
-{
-  path:"/birthdaysection/:birthdayId",
-  element:<BirthdayTicketSection/>
-},
+  {
+    path: "/birthdaysection/:birthdayId",
+    element: <BirthdayTicketSection />,
+  },
   {
     path: "/paymentmethods",
     element: <Categorypaymentmethod />,
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
     path: "/category/birthday",
     element: <Birthdaybtn />,
   },
+  {
+    path: "/enquiry",
+    element: <Enquiry />,
+  },
+  
 ]);
 
 export default router;

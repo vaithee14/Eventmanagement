@@ -5,7 +5,7 @@ import axios from "axios";
 export default function TicketsBooking() {
   const { eventId } = useParams();
   const navigate = useNavigate();
-z
+
   const paramsValue = useParams();
   const musicId = paramsValue.musicId;
   const [musicEvent, setmusicEvent] = useState();

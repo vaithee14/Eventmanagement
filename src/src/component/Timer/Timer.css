@@ -1,0 +1,84 @@
+.background-image {
+  background-image: url("../../assets/timerimg.jpg");
+  height: 100vh; 
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 15px;
+  color: #ee526f;
+}
+
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: rgba(238, 82, 111, 0.5);
+  margin-bottom: 20px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.time-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 100px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.time-box:hover {
+  transform: scale(1.05);
+}
+
+.time {
+  font-size: 40px;
+  font-weight: bold;
+  color: #ee526f;
+}
+
+.label {
+  font-size: 18px;
+  margin-top: 5px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .background-image {
+    height: auto;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .time-box {
+    min-width: 80px;
+    padding: 15px;
+  }
+
+  .time {
+    font-size: 30px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}

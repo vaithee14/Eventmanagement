@@ -28,7 +28,7 @@ export default function FooterSection() {
   };
 
   return (
-    <section className="footer" >
+    <section className="footer" id="service" >
       <div className="footer-left">
         <h1 className="footer-logo">CRAZY EVENTS</h1>
         <p className="footer-description">
