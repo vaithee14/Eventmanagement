@@ -1,13 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Eventprojects from "../component/Eventproject";
 import Musicbtn from "../component/Categories/musicbtn";
-import Ticketsbooking from "../component/Categories/Categoryticket";
-import Categorypaymentmethod from "../component/Categories/CategoryPayment";
-import Dancingbtn from "../component/Categories/Dancingbtn";
-import DanceTicketSection from "../component/Categories/DanceTicketSection";
-import BirthdayTicketSection from "../component/Categories/BirthdayTicketSection";
 import Birthdaybtn from "../component/Categories/Bithday";
 import Enquiry from "../component/Enquiry/Enquiry";
+import WeddingBtn from "../component/Categories/Wedding";
 
 const router = createBrowserRouter([
   {
@@ -21,35 +17,18 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/ticketsection/:musicId",
-    element: <Ticketsbooking />,
-  },
-  {
-    path: "/danceticketsection/:danceId",
-    element: <DanceTicketSection />,
-  },
-  {
-    path: "/birthdaysection/:birthdayId",
-    element: <BirthdayTicketSection />,
-  },
-  {
-    path: "/paymentmethods",
-    element: <Categorypaymentmethod />,
+    path: "/category/birthday",
+    element: <Birthdaybtn />,
   },
 
   {
-    path: "/category/dancing",
-    element: <Dancingbtn />,
-  },
-  {
-    path: "/category/birthday",
-    element: <Birthdaybtn />,
+    path: "/category/wedding",
+    element: <WeddingBtn />,
   },
   {
     path: "/enquiry",
     element: <Enquiry />,
   },
-  
 ]);
 
 export default router;

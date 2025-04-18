@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <section className="background-img" id="home">
       <nav className="navbar">
-        <div className="logo">PLANER EVENTS</div>
+        <div className="logo">EVENT PLANNER</div>
 
         <div className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
           <i className="fa fa-bars"></i>
@@ -54,9 +54,8 @@ export default function Navbar() {
           <h4 className="sub-heading">LET'S PARTY THIS YEAR</h4>
           <h1 className="main-heading">Welcome To My Event Booking Page</h1>
           <p className="sub-description">
-            Vivamus magna justo, lacinia eget consectetur sed, convallis at
-            tellus. Quisque velit nisi, pretium ut lacinia in, elementum id
-            enim.
+            Every event comes once in our life so they give us very precious
+            memories to cherish for a life time.
           </p>
           <button
             className="cta-button"

@@ -1,29 +1,28 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Musicbtn() {
-  const [musicEvent, setmusicEvent] = useState([]);
-  
+export default function WeddingBtn() {
+  const [weddingEvent, setweddingEvent] = useState([]);
 
   useEffect(() => {
-    const FetchMusicEvents = async () => {
+    const FetchWeddingEvents = async () => {
       try {
-        const musicEvents = await axios.get(
-          "http://localhost:4050/api/music/getMusic"
+        const weddingEvents = await axios.get(
+          "http://localhost:4050/wedding/music/weddingmusicartists"
         );
-        setmusicEvent(musicEvents.data);
+        setweddingEvent(weddingEvents.data);
       } catch (Error) {
         console.error(Error);
       }
     };
-    FetchMusicEvents();
+    FetchWeddingEvents();
   }, []);
   // post method
   const addMusicEvent = async () => {
     try {
       const newEvent = { title, description, image };
       const response = await axios.post(
-        "http://localhost:4050/api/music/addMusic",
+        "http://localhost:4050/wedding/music/musicartists",
         newEvent
       );
       console.log(response.data);
@@ -35,11 +34,11 @@ export default function Musicbtn() {
   return (
     <section className="p-6">
       <h1 className="text-white bg-[#ee526f] text-center py-2 text-2xl font-bold uppercase">
-        Music Events
+        What We Serve
       </h1>
 
       <div className="flex flex-col items-center gap-6 mt-6">
-        {musicEvent.map((events) => (
+        {weddingEvent.map((events) => (
           <div
             key={events._id}
             className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg w-[90%] md:w-[80%] p-6"
