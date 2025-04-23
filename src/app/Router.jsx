@@ -4,6 +4,7 @@ import Musicbtn from "../component/Categories/musicbtn";
 import Birthdaybtn from "../component/Categories/Bithday";
 import Enquiry from "../component/Enquiry/Enquiry";
 import WeddingBtn from "../component/Categories/Wedding";
+import CorporateFuction from "../component/Categories/Corporate";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/enquiry",
     element: <Enquiry />,
+  },
+  {
+    path: "/category/corporate events",
+    element: <CorporateFuction />,
   },
 ]);
 

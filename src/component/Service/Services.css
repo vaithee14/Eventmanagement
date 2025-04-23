@@ -32,16 +32,36 @@
   margin: 0;
   flex-wrap: wrap;
 }
+/* .service-btn {
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 15px 30px;
+  } */
+
 .service-btn {
   color: white;
-  background-color: #ee526f;
   border-radius: 25px;
   font-weight: bold;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 15px 30px;
+  padding: 0; /* remove padding to control exact height */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 160px; 
+  height: 100px;
+  font-size: 14px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
 .service-btn:hover {
   background-color: white;
   color: #ee526f;
@@ -116,4 +136,10 @@
   color: #444;
   line-height: 1.7;
   font-weight: 400;
+}
+.service-name {
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
 }

@@ -28,8 +28,10 @@ export default function Service() {
     try {
       const response = await axios.post(
         " http://localhost:4050/user/add/services",
-        { name: servicesName },
-
+        {
+          servicesName: servicesName,
+          imageUrl: imageUrl,
+        },
         {
           headers: {
             "Content-Type": "application/json",
@@ -61,11 +63,14 @@ export default function Service() {
               <li
                 key={data._id}
                 className="service-btn"
+                style={{
+                  backgroundImage: `url(${data.imageUrl})`,
+                }}
                 onClick={() =>
                   navigate(`/category/${data.servicesName.toLowerCase()}`)
                 }
               >
-                {data.servicesName}
+                <span className="service-name">{data.servicesName}</span>
               </li>
             ))}
           </ul>

@@ -3,7 +3,6 @@ import axios from "axios";
 
 export default function Musicbtn() {
   const [musicEvent, setmusicEvent] = useState([]);
-  
 
   useEffect(() => {
     const FetchMusicEvents = async () => {
@@ -35,7 +34,7 @@ export default function Musicbtn() {
   return (
     <section className="p-6">
       <h1 className="text-white bg-[#ee526f] text-center py-2 text-2xl font-bold uppercase">
-        Music Events
+        What We Serve
       </h1>
 
       <div className="flex flex-col items-center gap-6 mt-6">
