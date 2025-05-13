@@ -1,20 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Eventprojects from "../component/Eventproject";
-import Musicbtn from "../component/Categories/musicbtn";
 import Birthdaybtn from "../component/Categories/Bithday";
 import Enquiry from "../component/Enquiry/Enquiry";
 import WeddingBtn from "../component/Categories/Wedding";
 import CorporateFuction from "../component/Categories/Corporate";
+import Reception from "../component/Categories/Reception";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Eventprojects />,
-  },
-
-  {
-    path: "/category/music",
-    element: <Musicbtn />,
   },
 
   {
@@ -33,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/category/corporate events",
     element: <CorporateFuction />,
+  },
+  {
+    path: "/category/reception",
+    element: <Reception />,
   },
 ]);
 

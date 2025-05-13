@@ -50,9 +50,9 @@ export default function Service() {
         <div className="events-intro">
           <h3>WHAT WE SERVE</h3>
           <p>
-            We serve a wide variety of events — dance, music, birthdays,
-            weddings, corporate meets, cultural shows, baby showers, and more —
-            all tailored to make your celebration truly special.
+            We serve a wide variety of events — Reception, Stage Events,
+            birthdays, weddings, corporate meets, cultural shows, baby showers,
+            and more — all tailored to make your celebration truly special.
           </p>
         </div>
         <div className="Services">
